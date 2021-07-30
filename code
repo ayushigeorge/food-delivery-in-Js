@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function PlaceOrder(){
+                document.getElementbyId("order summary").style.display="block";
+                document.getElementbyId("orderForm").style.display= "none";
+
+                Uname= document.getElementbyId("txtName");
+                mobile= document.getElementbyId("txtMobile");
+                burger= document.getElementbyId("optBurger");
+                roller= document.getElementbyId("optRoller");
+                fries=document.getElementbyId("optfires");
+
+                var mcost=0;
+                var acost=0;
+                var aname=" ";
+                var aname=" ";
+                if(burger.checked){
+                    mcost=120;
+                    mname= burger.value;
+                }
+                if(roller.checked){
+                    mcost=120;
+                    mname= roller.value;
+                }
+                if (fries.checked){
+                    acost=60;
+                    mcost+=acost;
+                    aname+= fries.value+ "<br>";
+                }
+                document.getElementByid("lblName").innerHTML =uname.value;
+                document.getElementByid("lblMobile").innerHTML =mobile.value;
+                document.getElementByid("lblMeal").innerHTML =mname;
+                document.getElementById("lbladd").innerHTML =aname;
+                document.getElementById("lblAmount").innerHTML =mcost;
+            }
+        </script>
+
+
+    </head>
+    <body>
+        <div>
+            <fontsize= 6>
+                <table width= "800" Border= "2" cellspacing= "4" cellpadding= "4" margin="center" id= "" >
+                    <tr>
+                        <td><img src= "food.jpeg"></td>
+                    </tr>
+                    <tr>
+                        <td colspan= "2"> Customer Detail</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Name</td>
+                        <td> <input type= "text" id= "txtName" ></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number</td>
+                        <td> <input type= "text" id = "txtMobile" > </td>
+                    </tr>
+                    <tr>
+                        <td>Select a Meal</td>
+                    </tr>
+                     <tr>
+                         <td> <img src= "Burger.jpg" width="100" height="100">
+                        <br>
+                        <input type ="ratio" name="meal" id= "optBurger" value= "omgBurger">Big Burger(&#8377;120/-) 
+                        </td>
+                        <td>
+                            <img src= "roller.jpg" width="100" height="100">
+                            <br>
+                            <input type ="ratio" name="meal" id= "optRoller" value= "omgRoller">Roll(&#8377;100/-)
+                         </td>
+                     </tr>
+                     <tr>
+                        <td colspan= "2">
+                            Select Add-on's
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                            <img src= "fries.jpg" width="100" height="100">
+                            <br>
+                            <input type = "checkbox" id="optfries" value= "largefries" > Large Fries(&#8377;60/-)
+                        </td>
+                     </tr>
+                    <tr>
+                        <td> 
+                            <input type= "button" value = "Place Order" onlick=" ">
+                         </td>
+                    </tr>
+                </table>
+                <br>
+                <dl id="order summary" style= "display:none;">
+                    <h2>Order Summery</h2>
+                    <dt>Customer Name</dt>
+                    <dd if= "lblName"></dd>
+                    <dt>Mobile Number</dt>
+                    <dd id="lblMobile"></dd>
+                    <dt> Meal</dt>
+                    <dd id="lblMeal"></dd>
+                    <dt>Add ON's</dt>
+                    <dd id="Lbladd"></dd>
+                    <dt>Total Bill</dt>
+                    <dd id="lblAmount"></dd>
+                    <br>
+                    <input type="button" value="print Bill" onclick= "window.print()">
+                </dl>
+
+
+        </div>
+
+
+    </body>
+    </html>
